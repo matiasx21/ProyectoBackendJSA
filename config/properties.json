@@ -1,0 +1,4 @@
+{
+    "port": 3000,
+    "mongo_url": "mongodb+srv://paraproyecto:paraproyecto@jas-proyecto-fciv7.mongodb.net/test?retryWrites=true&w=majority"
+}
