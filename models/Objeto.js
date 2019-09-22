@@ -3,10 +3,10 @@ var Schema = mongoose.Schema;
 import { TipoObjeto } from "models";
 
 var ObjetoSchema = new Schema({
-    numeroOrden: Int32Array,
+    numeroOrden: String,
     estado: String,
     descripcion: String,
-    precio: Int32Array,
+    precio: String,
     tipoObjeto: TipoObjeto
 
 });
