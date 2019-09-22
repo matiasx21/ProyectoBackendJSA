@@ -9,6 +9,37 @@ router
             res.json(tipos);
         })
     })
+    .get((req,res) => {
+        const {id} = req.body;
+        tipoObjeto.findById(id,function(err,tipoObjeto){
+           if (err)
+               throw err;
+            res.json(tipoObjeto);
+    })
+    .put((req,res) => {
+        const { nombre,codigo,id } = req.body;
+         tipoObjeto.findById(id,function(err,tipoObjeto){
+            if (err)
+                throw err;
+            tipoObjeto.nombre = nombre;
+            tipoObjeto.codigo = codigo;
+            tipoObjeto.save((err) => {
+                if(err) throw err;
+                res.json({message: "SE MODIFICO"});
+            });
+        })
+    })
+    .delete((req,res) => {
+        const {id} = req.body;
+         tipoObjeto.findById(id,function(err,tipoObjeto){
+            if (err)
+                throw err;
+            tipoObjeto.remove((err) => {
+                if(err) throw err;
+                res.json({message: "SE ELIMINO"});
+            });
+        })
+    })
     .post((req,res) => {
         const { nombre,codigo } = req.body;
         var tipoObjeto = new TipoObjeto();
@@ -16,7 +47,7 @@ router
         tipoObjeto.codigo = codigo;
         tipoObjeto.save((err) => {
             if(err) throw err;
-            res.json({message: "SE CARGO"});
+            res.json({message: "SE AGREGO"});
         });
 
     });
