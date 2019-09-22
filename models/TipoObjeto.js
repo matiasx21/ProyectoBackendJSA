@@ -6,4 +6,4 @@ var TipoObjetoSchema = new Schema({
     nombre: String,
 });
 
-module.exports = mongoose.model("TipoObjeto", TipoObjetoSchema);
+module.exports = mongoose.model("tipoObjeto", TipoObjetoSchema);

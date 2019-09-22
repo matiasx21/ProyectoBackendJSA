@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var TipoObjeto = require("../models/tipoObjeto");
+var tipoObjeto = require("../models/tipoObjeto");
 router
     .route("/tipoObjeto")
     .get((req,res) => {
@@ -11,10 +11,10 @@ router
     })
     .post((req,res) => {
         const { nombre,codigo } = req.body;
-        var TipoObjeto = new TipoObjeto();
-        TipoObjeto.nombre = nombre;
-        TipoObjeto.codigo = codigo;
-        TipoObjeto.save((err) => {
+        var tipoObjeto = new TipoObjeto();
+        tipoObjeto.nombre = nombre;
+        tipoObjeto.codigo = codigo;
+        tipoObjeto.save((err) => {
             if(err) throw err;
             res.json({message: "SE CARGO"});
         });
