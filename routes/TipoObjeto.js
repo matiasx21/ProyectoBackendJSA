@@ -1,8 +1,8 @@
 var express = require("express");
 var router = express.Router();
-var TipoObjeto = require("../models/TipoObjeto");
+var TipoObjeto = require("../models/tipoObjeto");
 router
-    .route("/TipoObjeto")
+    .route("/tipoObjeto")
     .get((req,res) => {
         TipoObjeto.find((err, tipos) => {
             if(err) throw err;
