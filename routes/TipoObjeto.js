@@ -9,7 +9,6 @@ router
             res.json(tipos);
         })
     })
-
     /*
     .get((req,res) => {
         const {id} = req.body;
