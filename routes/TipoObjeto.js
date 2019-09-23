@@ -9,6 +9,8 @@ router
             res.json(tipos);
         })
     })
+
+    /*
     .get((req,res) => {
         const {id} = req.body;
         tipoObjeto.findById(id,function(err,tipoObjeto){
@@ -51,5 +53,5 @@ router
         });
 
     });
-
+*/
 module.exports = router;

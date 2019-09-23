@@ -3,7 +3,6 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var config = require("./config/properties.json");
 var TipoObjetoRouter = require("./routes/tipoObjeto");
-
 var app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -24,7 +23,7 @@ mongoose.connect(config.mongo_url, { useNewUrlParser: true })
 .then(()=>{
     console.log("MongoDB successfully connected!");
 
-    app.listen(config.port, () => console.log(
+    app.listen(process.env.port || config.port, () => console.log(
         "Application is running under port " + config.port));
 
 }).catch((err) => {
