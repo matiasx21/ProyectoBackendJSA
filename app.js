@@ -19,7 +19,7 @@ app.use(function(req, res, next){
 
 app.use('/api', TipoObjetoRouter);
 
-mongoose.connect(config.mongo_url, { useNewUrlParser: true })
+mongoose.connect(config.mongo_url, { useNewUrlParser: true, useUnifiedTopology: true  })
 .then(()=>{
     console.log("MongoDB successfully connected!");
 
