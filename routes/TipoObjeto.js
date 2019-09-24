@@ -17,7 +17,7 @@ router
                throw err;
             res.json(TipoObjeto);
         })
-    }) */
+    }) 
     .put((req,res) => {
    
         const { nombre,codigo,id } = req.body;
@@ -53,5 +53,8 @@ router
             res.json({message: "SE AGREGO"});
         });
 
+        
+
     });
+    */
     module.exports = router;
