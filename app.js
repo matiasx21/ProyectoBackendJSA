@@ -29,6 +29,3 @@ mongoose.connect(config.mongo_url, { useNewUrlParser: true, useUnifiedTopology: 
 }).catch((err) => {
     console.log("Error connecting with MongoDB :-(");
 })
-
-
-

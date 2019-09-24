@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var tipoObjeto = require("../models/tipoObjeto");
+var TipoObjeto = require("../models/tipoObjeto");
 router
     .route("/tipoObjeto")
     .get((req,res) => {
@@ -9,22 +9,23 @@ router
             res.json(tipos);
         })
     })
-    /*
     .get((req,res) => {
         const {id} = req.body;
-        tipoObjeto.findById(id,function(err,tipoObjeto){
+        TipoObjeto.findById(id,function(err,TipoObjeto){
            if (err)
                throw err;
-            res.json(tipoObjeto);
-    })
+            res.json(TipoObjeto);
+        })
+    }) 
     .put((req,res) => {
+   
         const { nombre,codigo,id } = req.body;
-         tipoObjeto.findById(id,function(err,tipoObjeto){
+        TipoObjeto.findById(id,function(err,tipoObjeto){
             if (err)
                 throw err;
-            tipoObjeto.nombre = nombre;
-            tipoObjeto.codigo = codigo;
-            tipoObjeto.save((err) => {
+                TipoObjeto.nombre = nombre;
+                TipoObjeto.codigo = codigo;
+            TipoObjeto.save((err) => {
                 if(err) throw err;
                 res.json({message: "SE MODIFICO"});
             });
@@ -32,10 +33,10 @@ router
     })
     .delete((req,res) => {
         const {id} = req.body;
-         tipoObjeto.findById(id,function(err,tipoObjeto){
+        TipoObjeto.findById(id,function(err,TipoObjeto){
             if (err)
                 throw err;
-            tipoObjeto.remove((err) => {
+                TipoObjeto.remove((err) => {
                 if(err) throw err;
                 res.json({message: "SE ELIMINO"});
             });
@@ -44,13 +45,12 @@ router
     .post((req,res) => {
         const { nombre,codigo } = req.body;
         var tipoObjeto = new TipoObjeto();
-        tipoObjeto.nombre = nombre;
-        tipoObjeto.codigo = codigo;
-        tipoObjeto.save((err) => {
+        TipoObjeto.nombre = nombre;
+        TipoObjeto.codigo = codigo;
+        TipoObjeto.save((err) => {
             if(err) throw err;
             res.json({message: "SE AGREGO"});
         });
 
     });
-*/
-module.exports = router;
+    module.exports = router;
