@@ -9,6 +9,7 @@ router
             res.json(tipos);
         })
     })
+    /*
     .get((req,res) => {
         const {id} = req.body;
         TipoObjeto.findById(id,function(err,TipoObjeto){
@@ -16,7 +17,7 @@ router
                throw err;
             res.json(TipoObjeto);
         })
-    }) 
+    }) */
     .put((req,res) => {
    
         const { nombre,codigo,id } = req.body;
