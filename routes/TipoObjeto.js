@@ -17,11 +17,11 @@ router
                throw err;
             res.json(TipoObjeto);
         })
-    }) 
+    }) */
     .put((req,res) => {
    
         const { nombre,codigo,id } = req.body;
-        TipoObjeto.findById(id,function(err,tipoObjeto){
+        TipoObjeto.findById(id,function(err,TipoObjeto){
             if (err)
                 throw err;
                 TipoObjeto.nombre = nombre;
@@ -45,10 +45,10 @@ router
     })
     .post((req,res) => {
         const { nombre,codigo } = req.body;
-        var tipoObjeto = new TipoObjeto();
-        TipoObjeto.nombre = nombre;
-        TipoObjeto.codigo = codigo;
-        TipoObjeto.save((err) => {
+        var elObjeto = new TipoObjeto();
+        elObjeto.nombre = nombre;
+        elObjeto.codigo = codigo;
+        elObjeto.save((err) => {
             if(err) throw err;
             res.json({message: "SE AGREGO"});
         });
@@ -56,5 +56,7 @@ router
         
 
     });
-    */
+
+    
+    
     module.exports = router;
