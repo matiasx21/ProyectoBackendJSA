@@ -2,7 +2,7 @@ var express = require("express");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var config = require("./config/properties.json");
-var TipoObjetoRouter = require("./routes/tipoObjeto");
+var tipoObjetoRouter = require("./routes/tipoObjeto");
 var app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -17,7 +17,7 @@ app.use(function(req, res, next){
      next();
 });
 
-app.use('/api', TipoObjetoRouter);
+app.use('/api', tipoObjetoRouter);
 
 mongoose.connect(config.mongo_url, { useNewUrlParser: true, useUnifiedTopology: true  })
 .then(()=>{
