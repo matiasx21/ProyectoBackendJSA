@@ -8,17 +8,7 @@ router
             if(err) throw err;
             res.json(tipos);
         })
-    })
-    /*
-    .get((req,res) => {
-        const {id} = req.body;
-        TipoObjeto.findById(id,function(err,TipoObjeto){
-           if (err)
-               throw err;
-            res.json(TipoObjeto);
-        })
-    }) */
-    .put((req,res) => {
+    }).put((req,res) => {
    
         const { nombre,codigo,id } = req.body;
         TipoObjeto.findById(id,function(err,TipoObjeto){
@@ -60,3 +50,14 @@ router
 
     
     module.exports = router;
+    
+    /*
+    .get((req,res) => {
+        const {id} = req.body;
+        TipoObjeto.findById(id,function(err,TipoObjeto){
+           if (err)
+               throw err;
+            res.json(TipoObjeto);
+        })
+    }) */
+    
