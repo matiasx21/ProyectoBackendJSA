@@ -43,7 +43,6 @@ router
             res.json({message: "SE AGREGO"});
         });
 
-        
 
     });
 
