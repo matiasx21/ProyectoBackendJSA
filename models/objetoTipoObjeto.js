@@ -5,5 +5,4 @@ var TipoObjetoSchema = new Schema({
     codigo: String,
     nombre: String,
 });
-
 module.exports = mongoose.model("TipoObjeto", TipoObjetoSchema);
