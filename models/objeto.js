@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var ObjetoSchema = new Schema({
     numeroOrden: String,
-    nombre: String,
+    estado: String,
     tipoObjeto: String, 
     descripcion: String,
     precio: String
