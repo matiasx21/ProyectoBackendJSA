@@ -66,9 +66,8 @@ router
                 }
             })
         });
-
-    router
-        .route("/objeto/:estado")
+        router
+        .route("/objeto/estado/:estado")
         .get((req,res) => {
             Objeto.findById(req.params.estado,function(err,Objeto){
                 try {
@@ -78,6 +77,7 @@ router
                 }
             })
         })
-    ;
+        ;
+
     module.exports = router;
     
