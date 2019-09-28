@@ -10,7 +10,7 @@ router
         })
     })
     .post((req,res) => {
-        const { numeroOrden, nombre,tipoObjeto,descripcion,precio } = req.body;
+        const { numeroOrden, estado,tipoObjeto,descripcion,precio } = req.body;
         var elObjeto = new Objeto();
         elObjeto.numeroOrden = numeroOrden;
         elObjeto.estado = estado;
